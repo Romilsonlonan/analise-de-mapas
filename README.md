@@ -173,13 +173,12 @@ for feature in selection:
 ## Automatizando tarefas
 ![Captura de tela de 2024-01-17 07-39-18](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/183adb4c-f72b-4db3-84bc-05f50e9db625)
 
+```
 # Define a variável `path` como o caminho para o diretório que contém as camadas vetoriais shapefile.
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
 ## Imprime o caminho do diretório.
 print(path)
-
-<hr>
 
 ## Percorre o diretório `path` recursivamente.
 for root, diretory, files in os.walk(path):
@@ -201,15 +200,17 @@ for root, diretory, files in os.walk(path):
 
             # Imprime o nome do arquivo.
             print(file)
+```
+
+<hr>
 
 ## Define o título do projeto para "CURSO PYQGIS".
+```
 project.setTitle('CURSO PYQGIS')
-
 
 ## Imprime o título do projeto
 print(project.title())
-
-<hr>
+```
 
 ## O código acima faz duas coisas:
 
