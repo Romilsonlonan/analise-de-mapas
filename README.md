@@ -63,8 +63,9 @@ print(project.title())
 
 ## O código acima faz duas coisas:
 
-Carrega todas as camadas vetoriais shapefile de um diretório específico no projeto QGIS atualmente aberto.
-Define o título do projeto para "CURSO PYQGIS".
+item 1 Carrega todas as camadas vetoriais shapefile de um diretório específico no projeto QGIS atualmente aberto.
+item 2 Define o título do projeto para "CURSO PYQGIS".
+
 A primeira parte do código funciona da seguinte forma:
 
 A linha for root, diretory, files in os.walk(path) inicia um loop que percorre o diretório path recursivamente.
