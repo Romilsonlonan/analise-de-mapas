@@ -21,36 +21,36 @@ print(project.count())
 
 <hr>
 
-# Obter o ID da camada
+## Obter o ID da camada
 
-# Dados Vetoriais
+### Dados Vetoriais
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
-# abrindo uma camada vetorial
+### abrindo uma camada vetorial
 path_layer = path + '/aeroportos.shp'
 
 layer = QgsVectorLayer(path_layer, "Aeroportos", "ogr")
 
-# Adicionar a camada canvas 
+### Adicionar a camada canvas 
 QgsProject.instance().addMapLayer(layer)
 
-# Obter o id
+## Obter o id
 print(layer.id())
 
-# extent da camada
+### extent da camada
 print(layer.extent())
 
-# Criar novos atributos (novos campos)
+### Criar novos atributos (novos campos)
 layer.startEditing()
 layer.addAttribute(QgsField('area', QVariant.Double))
 layer.commitChanges()
 
-# Tipos de campos: String, Double e Int
+## Tipos de campos: String, Double e Int
 
-# Obter informaçes de campos
+## Obter informaçes de campos
 print(layer.fields().names())
 
-# Deletando um campo
+## Deletando um campo
 layer.startEditing()
 layer.deleteAttribute(15)
 layer.commitChanges()
@@ -59,7 +59,7 @@ layer.commitChanges()
 print(layer.fields().names()[4])
 
 
-# Informaço das features
+## Informaço das features
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
@@ -67,7 +67,7 @@ for feature in layer.getFeatures():
         count += 1
         
         
-# Informaço do atributo [4]
+## Informaço do atributo [4]
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
@@ -76,8 +76,8 @@ for feature in layer.getFeatures():
         
         
         
-# Alterando e update de campos
-# Deletando um campo
+## Alterando e update de campos
+## Deletando um campo
 layer.startEditing()
 layer.deleteAttribute(14)
 layer.commitChanges()
@@ -91,7 +91,7 @@ for feature in layer.getFeatures():
         
         
 
-# update 
+## update 
 layer.startEditing()
 layer.addAttribute(QgsField('x', QVariant.Double))
 layer.commitChanges()
@@ -110,16 +110,16 @@ O código modifica uma camada vetorial, adicionando um novo campo "y" de tipo do
 e atualizando os valores desse campo com as coordenadas y das geometrias de cada feição.
 '''
 
-# Inicia a edição da camada para permitir modificações
+## Inicia a edição da camada para permitir modificações
 layer.startEditing()
 
-# Adiciona um novo campo de double chamado "y" à camada
+## Adiciona um novo campo de double chamado "y" à camada
 layer.addAttribute(QgsField('y', QVariant.Double))
 
-# Confirma as alterações realizadas na camada
+## Confirma as alterações realizadas na camada
 layer.commitChanges()
 
-# Reinicia a edição para modificar os valores dos atributos
+## Reinicia a edição para modificar os valores dos atributos
 layer.startEditing()
 
 # Percorre cada feição da camada
@@ -137,22 +137,22 @@ for feature in layer.getFeatures():
     # Atualiza os valores de atributos da feição com o novo valor de y
     layer.changeAttributeValues(id, attr_value)
 
-# Confirma as alterações realizadas nos atributos
+## Confirma as alterações realizadas nos atributos
 layer.commitChanges()
 
-# seleçao por expresso
+## seleçao por expresso
 layer.selectByExpression("TipoAero = 'Nacional'", QgsVectorLayer.SetSelection)
 
-# Inverso de seleçao
+## Inverso de seleçao
 layer.invertSelection()
 
-#Adiçao a seleçao
+## Adiçao a seleçao
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.AddToSelection)
 
 # remove da seleçao
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.RemoveFromSelection)
 
-# Criar um objeto com a seleçao
+## Criar um objeto com a seleçao
 selection = layer.selectedFeatures()
 for feature in selection:
     print(feature.attributes())
