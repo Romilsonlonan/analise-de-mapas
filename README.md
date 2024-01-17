@@ -23,27 +23,37 @@ print(project.count())
 # Automatizando tarefas
 ![Captura de tela de 2024-01-17 07-39-18](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/183adb4c-f72b-4db3-84bc-05f50e9db625)
 
+
+# Define a variável `path` como o caminho para o diretório que contém as camadas vetoriais shapefile.
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
+
+# Imprime o caminho do diretório.
 print(path)
 
-## Percorre o diretório `path` recursivamente
+# Percorre o diretório `path` recursivamente.
 for root, diretory, files in os.walk(path):
-    ## Percorre os arquivos no diretório
+
+    # Percorre os arquivos no diretório atual.
     for file in files:
-        ## Verifica se o arquivo termina com a extensão .shp
+
+        # Verifica se o arquivo termina com a extensão .shp.
         if file.endswith('.shp'):
-            ## Cria o caminho completo para o arquivo .shp
-            path_vector = os.path.join(path,file)
-            ## Cria um objeto QgsVectorLayer a partir do arquivo shapefile
-            layer = QgsVectorLayer(path_vector, file[0:-4],"ogr")
-            ### Adiciona a camada ao projeto QGIS
+
+            # Cria o caminho completo para o arquivo .shp.
+            path_vector = os.path.join(path, file)
+
+            # Cria um objeto QgsVectorLayer a partir do arquivo shapefile.
+            layer = QgsVectorLayer(path_vector, file[0:-4], "ogr")
+
+            # Adiciona a camada ao projeto QGIS.
             QgsProject.instance().addMapLayer(layer)
-                ### Imprime o arquivo
-                print(file)
 
+            # Imprime o nome do arquivo.
+            print(file)
 
-## Define o título do projeto para `CURSO PYQGIS`
+# Define o título do projeto para "CURSO PYQGIS".
 project.setTitle('CURSO PYQGIS')
+
 
 ## Imprime o título do projeto
 print(project.title())
