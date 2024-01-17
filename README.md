@@ -159,13 +159,13 @@ for feature in selection:
 
 <hr>    
 
-# Automatizando tarefas
+## Automatizando tarefas
 ![Captura de tela de 2024-01-17 07-39-18](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/183adb4c-f72b-4db3-84bc-05f50e9db625)
 
 # Define a variável `path` como o caminho para o diretório que contém as camadas vetoriais shapefile.
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
-# Imprime o caminho do diretório.
+## Imprime o caminho do diretório.
 print(path)
 
 <hr>
