@@ -79,12 +79,12 @@ print(project.title())
 * A linha print(file) imprime o nome do arquivo.
 * Ao final da execução do código, todas as camadas vetoriais shapefile do diretório especificado serão carregadas no projeto QGIS.
 
-A segunda parte do código funciona da seguinte forma:
+## A segunda parte do código funciona da seguinte forma:
 
-A linha project.setTitle('CURSO PYQGIS') define o título do projeto para "CURSO PYQGIS".
-A linha print(project.title()) imprime o título do projeto.
-Ao final da execução do código, o título do projeto será alterado para "CURSO PYQGIS".
+* A linha project.setTitle('CURSO PYQGIS') define o título do projeto para "CURSO PYQGIS".
+* A linha print(project.title()) imprime o título do projeto.
+* Ao final da execução do código, o título do projeto será alterado para "CURSO PYQGIS".
 
-Aqui está um resumo mais conciso do que o código faz:
+## Aqui está um resumo mais conciso do que o código faz:
 
-Carrega todas as camadas vetoriais shapefile de um diretório e define o título do projeto.
+* Carrega todas as camadas vetoriais shapefile de um diretório e define o título do projeto.
