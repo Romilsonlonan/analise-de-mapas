@@ -3,7 +3,7 @@
 ![Captura de tela de 2024-01-17 07-03-52](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/ccf2b72b-e52e-4f29-92c6-d1c86910b983)
 ![Captura de tela de 2024-01-17 06-56-03](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/506aba90-6690-4fb9-8c35-3ebc1d3afb01)
 
-
+```
 ## Atribui a variável `project` a uma instância do objeto `QgsProject`
 project = QgsProject.instance()
 
@@ -18,11 +18,11 @@ project.setBackgroundColor(QColor(51, 153, 255))
 
 ## Imprime o número de camadas do projeto
 print(project.count())
-
+```
 <hr>
 
 ## Obter o ID da camada
-
+```
 ### Dados Vetoriais
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
@@ -39,41 +39,46 @@ print(layer.id())
 
 ### extent da camada
 print(layer.extent())
+```
 
 ### Criar novos atributos (novos campos)
+## Tipos de campos: String, Double e Int
+```
 layer.startEditing()
 layer.addAttribute(QgsField('area', QVariant.Double))
 layer.commitChanges()
 
-## Tipos de campos: String, Double e Int
 
 ## Obter informaçes de campos
 print(layer.fields().names())
+```
 
 ## Deletando um campo
+```
 layer.startEditing()
 layer.deleteAttribute(15)
 layer.commitChanges()
 
 #
 print(layer.fields().names()[4])
-
-
+```
+```
 ## Informaço das features
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
         print(feature.attributes())
         count += 1
-        
-        
+```
+                
 ## Informaço do atributo [4]
+```
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
         print(feature.attributes()[4])
         count += 1        
-        
+```        
         
         
 ## Alterando e update de campos
@@ -123,6 +128,7 @@ layer.commitChanges()
 layer.startEditing()
 
 # Percorre cada feição da camada
+```
 for feature in layer.getFeatures():
 
     # Obtém o ID da feição atual
@@ -139,12 +145,17 @@ for feature in layer.getFeatures():
 
 ## Confirma as alterações realizadas nos atributos
 layer.commitChanges()
+```
 
-## seleçao por expresso
+## seleçao por expressao
+```
 layer.selectByExpression("TipoAero = 'Nacional'", QgsVectorLayer.SetSelection)
 
 ## Inverso de seleçao
 layer.invertSelection()
+```
+
+
 
 ## Adiçao a seleçao
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.AddToSelection)
