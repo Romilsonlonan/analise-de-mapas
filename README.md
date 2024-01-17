@@ -52,7 +52,9 @@ project.setTitle('CURSO PYQGIS')
 ## Imprime o título do projeto
 print(project.title())
 
-O código acima faz duas coisas:
+<hr>
+
+## O código acima faz duas coisas:
 
 Carrega todas as camadas vetoriais shapefile de um diretório específico no projeto QGIS atualmente aberto.
 Define o título do projeto para "CURSO PYQGIS".
