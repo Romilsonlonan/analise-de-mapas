@@ -66,17 +66,18 @@ print(project.title())
 * Carrega todas as camadas vetoriais shapefile de um diretório específico no projeto QGIS atualmente aberto.
 * Define o título do projeto para "CURSO PYQGIS".
 
-A primeira parte do código funciona da seguinte forma:
+## A primeira parte do código funciona da seguinte forma:
 
-A linha for root, diretory, files in os.walk(path) inicia um loop que percorre o diretório path recursivamente.
-A linha for file in files inicia um loop que percorre os arquivos no diretório atual.
-A linha if file.endswith('.shp') verifica se o arquivo termina com a extensão .shp.
-Se o arquivo terminar com a extensão .shp, as linhas seguintes são executadas:
-A linha path_vector = os.path.join(path,file) cria o caminho completo para o arquivo .shp.
-A linha layer = QgsVectorLayer(path_vector, file[0:-4],"ogr") cria um objeto QgsVectorLayer a partir do arquivo shapefile.
-A linha QgsProject.instance().addMapLayer(layer) adiciona a camada ao projeto QGIS.
-A linha print(file) imprime o nome do arquivo.
-Ao final da execução do código, todas as camadas vetoriais shapefile do diretório especificado serão carregadas no projeto QGIS.
+* A linha for root, diretory, files in os.walk(path) inicia um loop que percorre o diretório path recursivamente.
+* A linha for file in files inicia um loop que percorre os arquivos no diretório atual.
+* A linha if file.endswith('.shp') verifica se o arquivo termina com a extensão .shp.
+
+## Se o arquivo terminar com a extensão .shp, as linhas seguintes são executadas:
+* A linha path_vector = os.path.join(path,file) cria o caminho completo para o arquivo .shp.
+* A linha layer = QgsVectorLayer(path_vector, file[0:-4],"ogr") cria um objeto QgsVectorLayer a partir do arquivo shapefile.
+* A linha QgsProject.instance().addMapLayer(layer) adiciona a camada ao projeto QGIS.
+* A linha print(file) imprime o nome do arquivo.
+* Ao final da execução do código, todas as camadas vetoriais shapefile do diretório especificado serão carregadas no projeto QGIS.
 
 A segunda parte do código funciona da seguinte forma:
 
