@@ -19,6 +19,145 @@ project.setBackgroundColor(QColor(51, 153, 255))
 ## Imprime o número de camadas do projeto
 print(project.count())
 
+<hr>
+
+# Obter o ID da camada
+
+# Dados Vetoriais
+path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
+
+# abrindo uma camada vetorial
+path_layer = path + '/aeroportos.shp'
+
+layer = QgsVectorLayer(path_layer, "Aeroportos", "ogr")
+
+# Adicionar a camada canvas 
+QgsProject.instance().addMapLayer(layer)
+
+# Obter o id
+print(layer.id())
+
+# extent da camada
+print(layer.extent())
+
+# Criar novos atributos (novos campos)
+layer.startEditing()
+layer.addAttribute(QgsField('area', QVariant.Double))
+layer.commitChanges()
+
+# Tipos de campos: String, Double e Int
+
+# Obter informaçes de campos
+print(layer.fields().names())
+
+# Deletando um campo
+layer.startEditing()
+layer.deleteAttribute(15)
+layer.commitChanges()
+
+#
+print(layer.fields().names()[4])
+
+
+# Informaço das features
+count = 0
+for feature in layer.getFeatures():
+    while count < 5:
+        print(feature.attributes())
+        count += 1
+        
+        
+# Informaço do atributo [4]
+count = 0
+for feature in layer.getFeatures():
+    while count < 5:
+        print(feature.attributes()[4])
+        count += 1        
+        
+        
+        
+# Alterando e update de campos
+# Deletando um campo
+layer.startEditing()
+layer.deleteAttribute(14)
+layer.commitChanges()
+
+
+count = 0
+for feature in layer.getFeatures():
+    while count < 5:
+        print(feature.geometry().asPoint()[0])
+        count += 1   
+        
+        
+
+# update 
+layer.startEditing()
+layer.addAttribute(QgsField('x', QVariant.Double))
+layer.commitChanges()
+
+layer.startEditing()
+for feature in layer.getFeatures():
+    id = feature.id()
+    x = feature.geometry().asPoint()[0]
+    attr_value = {14:x}
+    layer.changeAttributeValues(id, attr_value)
+
+layer.commitChanges()                   
+    
+'''
+O código modifica uma camada vetorial, adicionando um novo campo "y" de tipo double 
+e atualizando os valores desse campo com as coordenadas y das geometrias de cada feição.
+'''
+
+# Inicia a edição da camada para permitir modificações
+layer.startEditing()
+
+# Adiciona um novo campo de double chamado "y" à camada
+layer.addAttribute(QgsField('y', QVariant.Double))
+
+# Confirma as alterações realizadas na camada
+layer.commitChanges()
+
+# Reinicia a edição para modificar os valores dos atributos
+layer.startEditing()
+
+# Percorre cada feição da camada
+for feature in layer.getFeatures():
+
+    # Obtém o ID da feição atual
+    id = feature.id()
+
+    # Extrai a coordenada y da geometria da feição
+    y = feature.geometry().asPoint()[1]
+
+    # Cria um dicionário com o valor de y para o atributo 15
+    attr_value = {15: y}
+
+    # Atualiza os valores de atributos da feição com o novo valor de y
+    layer.changeAttributeValues(id, attr_value)
+
+# Confirma as alterações realizadas nos atributos
+layer.commitChanges()
+
+# seleçao por expresso
+layer.selectByExpression("TipoAero = 'Nacional'", QgsVectorLayer.SetSelection)
+
+# Inverso de seleçao
+layer.invertSelection()
+
+#Adiçao a seleçao
+layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.AddToSelection)
+
+# remove da seleçao
+layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.RemoveFromSelection)
+
+# Criar um objeto com a seleçao
+selection = layer.selectedFeatures()
+for feature in selection:
+    print(feature.attributes())
+
+<hr>    
 
 # Automatizando tarefas
 ![Captura de tela de 2024-01-17 07-39-18](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/183adb4c-f72b-4db3-84bc-05f50e9db625)
