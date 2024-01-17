@@ -82,21 +82,22 @@ for feature in layer.getFeatures():
         
         
 ## Alterando e update de campos
-## Deletando um campo
+```
+# Deletando um campo
 layer.startEditing()
 layer.deleteAttribute(14)
 layer.commitChanges()
-
-
+```
+```
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
         print(feature.geometry().asPoint()[0])
         count += 1   
-        
-        
-
+```        
+## Adiciona um novo campo de double chamado "x" à camada
 ## update 
+```
 layer.startEditing()
 layer.addAttribute(QgsField('x', QVariant.Double))
 layer.commitChanges()
@@ -117,8 +118,11 @@ e atualizando os valores desse campo com as coordenadas y das geometrias de cada
 
 ## Inicia a edição da camada para permitir modificações
 layer.startEditing()
+```
+<hr>
 
 ## Adiciona um novo campo de double chamado "y" à camada
+```
 layer.addAttribute(QgsField('y', QVariant.Double))
 
 ## Confirma as alterações realizadas na camada
@@ -128,7 +132,6 @@ layer.commitChanges()
 layer.startEditing()
 
 # Percorre cada feição da camada
-```
 for feature in layer.getFeatures():
 
     # Obtém o ID da feição atual
@@ -155,19 +158,22 @@ layer.selectByExpression("TipoAero = 'Nacional'", QgsVectorLayer.SetSelection)
 layer.invertSelection()
 ```
 
-
-
 ## Adiçao a seleçao
+```
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.AddToSelection)
+```
 
-# remove da seleçao
+## remove da seleçao
+```
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.RemoveFromSelection)
+```
 
 ## Criar um objeto com a seleçao
+```
 selection = layer.selectedFeatures()
 for feature in selection:
     print(feature.attributes())
-
+```
 <hr>    
 
 ## Automatizando tarefas
