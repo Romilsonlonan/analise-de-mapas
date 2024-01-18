@@ -307,3 +307,33 @@ O filtro pode ser aplicado de forma permanente ou temporária. No código acima,
 No exemplo acima, o método setSubsetString() é usado para aplicar o filtro de forma permanente. A linha municipios.setSubsetString("uf = 'RJ'") aplica o filtro à camada municipios. A linha municipios.setSubsetString("") remove o filtro da camada municipios.
 
 <hr>
+
+## Exportando um arquivo vetorial:
+
+```python
+# Cria um objeto de opções de gravação para especificar configurações adicionais durante a exportação da camada vetorial.
+options = QgsVectorFileWriter.SaveVectorOptions()
+
+# Monta o caminho completo para o arquivo de saída, que será um GeoPackage com o nome "municipiosrj.gpkg" na pasta "results".
+out_path = os.path.join(path, 'results/municipiosrj.gpkg')
+
+# Obtém o contexto de transformação do projeto QGIS, que contém informações sobre o sistema de coordenadas e as transformações necessárias para a exportação.
+transform = QgsProject.instance().transformContext()
+
+# Grava a camada vetorial `municipios` no formato GeoPackage (`.gpkg`) no caminho especificado, utilizando o contexto de transformação e as opções de gravação definidas.
+QgsVectorFileWriter.writeAsVectorFormatV2(municipios, 
+                                          out_path,
+                                          transform,
+                                          options
+                                          )
+```
+
+## Resumo
+Este código exporta uma camada vetorial para um arquivo GeoPackage. As linhas de código estão comentadas com uma descrição do que cada linha está fazendo.
+
+### Observações
+
+As opções de gravação podem ser usadas para especificar configurações como o tipo de geometria, o esquema de atributos e o sistema de coordenadas do arquivo de saída.
+O contexto de transformação contém informações sobre o sistema de coordenadas do projeto QGIS e do arquivo de saída. É importante utilizar o contexto de transformação correto para garantir que os dados sejam exportados corretamente.
+
+O formato GeoPackage é um formato de arquivo de dados espaciais aberto e flexível que pode ser utilizado para armazenar dados vetoriais e raster.
