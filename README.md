@@ -41,8 +41,8 @@ print(layer.id())
 print(layer.extent())
 ```
 
-### Criar novos atributos (novos campos)
-## Tipos de campos: String, Double e Int
+## Criar novos atributos (novos campos)
+### Tipos de campos: String, Double e Int
 ```python
 layer.startEditing()
 layer.addAttribute(QgsField('area', QVariant.Double))
@@ -246,28 +246,49 @@ print(project.title())
 
 * Carrega todas as camadas vetoriais shapefile de um diretório e define o título do projeto.
 * 
+<hr>
 
-# FILTRO EM CAMADA
+## FILTRO EM CAMADA
 
 ![Captura de tela de 2024-01-18 17-13-58](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/f9a31883-c4b4-4e9c-8f6b-1ce16a547f5b)
 
 ```python
+# Atribui a variável `path` o caminho completo para a pasta `dados` no diretório atual do projeto QGIS.
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
+# Inicia um loop `for` para percorrer os arquivos da pasta `dados`.
 for root, diretory, files in os.walk(path):
+
+    # Atribui a variável `file` cada arquivo no loop.
     for file in files:
+
+        # Verifica se o arquivo termina com a extensão `.shp`.
         if file.endswith('.shp'):
-            path_vector = os.path.join(path,file)
-            layer = QgsVectorLayer(path_vector, file[0:-4],"ogr")
+
+            # Atribui a variável `path_vector` o caminho completo para o arquivo.
+            path_vector = os.path.join(path, file)
+
+            # Cria uma camada vetorial a partir do arquivo `path_vector`.
+            layer = QgsVectorLayer(path_vector, file[0:-4], "ogr")
+
+            # Adiciona a camada vetorial ao projeto QGIS.
             QgsProject.instance().addMapLayer(layer)
-            
+
+# Atribui a variável `municipios` a primeira camada vetorial com o nome `municipios` no projeto QGIS.
 municipios = QgsProject.instance().mapLayersByName("municipios")[0]
-print(municipios.featureCount())
 
+# Imprime o número de features na camada `municipios`.
+print(f"O número de features na camada `municipios` é: {municipios.featureCount()}")
+
+# Aplica um filtro à camada `municipios` para selecionar apenas as features cujo atributo `uf` tem o valor `RJ`.
 municipios.setSubsetString("uf = 'RJ'")
-print(municipios.featureCount())
 
+# Imprime o número de features na camada `municipios` após a aplicação do filtro.
+print(f"O número de features na camada `municipios` após a aplicação do filtro é: {municipios.featureCount()}")
+
+# Remove o filtro da camada `municipios`.
 municipios.setSubsetString("")
+
 ```
 
 
@@ -284,3 +305,5 @@ No código acima, o filtro é aplicado com base no atributo uf da camada municip
 O filtro pode ser aplicado de forma permanente ou temporária. No código acima, o filtro é aplicado de forma temporária. Isso significa que o filtro é aplicado apenas quando o código é executado. Se você quiser aplicar o filtro de forma permanente, você pode usar o método setSubsetString() da camada vetorial.
 
 No exemplo acima, o método setSubsetString() é usado para aplicar o filtro de forma permanente. A linha municipios.setSubsetString("uf = 'RJ'") aplica o filtro à camada municipios. A linha municipios.setSubsetString("") remove o filtro da camada municipios.
+
+<hr>
