@@ -3,7 +3,7 @@
 ![Captura de tela de 2024-01-17 07-03-52](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/ccf2b72b-e52e-4f29-92c6-d1c86910b983)
 ![Captura de tela de 2024-01-17 06-56-03](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/506aba90-6690-4fb9-8c35-3ebc1d3afb01)
 
-```
+```python
 ## Atribui a variável `project` a uma instância do objeto `QgsProject`
 project = QgsProject.instance()
 
@@ -22,7 +22,7 @@ print(project.count())
 <hr>
 
 ## Obter o ID da camada
-```
+```python
 ### Dados Vetoriais
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
@@ -43,7 +43,7 @@ print(layer.extent())
 
 ### Criar novos atributos (novos campos)
 ## Tipos de campos: String, Double e Int
-```
+```python
 layer.startEditing()
 layer.addAttribute(QgsField('area', QVariant.Double))
 layer.commitChanges()
@@ -54,7 +54,7 @@ print(layer.fields().names())
 ```
 
 ## Deletando um campo
-```
+```python
 layer.startEditing()
 layer.deleteAttribute(15)
 layer.commitChanges()
@@ -62,7 +62,7 @@ layer.commitChanges()
 #
 print(layer.fields().names()[4])
 ```
-```
+```python
 ## Informaço das features
 count = 0
 for feature in layer.getFeatures():
@@ -72,7 +72,7 @@ for feature in layer.getFeatures():
 ```
                 
 ## Informaço do atributo [4]
-```
+```python
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
@@ -82,13 +82,13 @@ for feature in layer.getFeatures():
         
         
 ## Alterando e update de campos
-```
+```python
 # Deletando um campo
 layer.startEditing()
 layer.deleteAttribute(14)
 layer.commitChanges()
 ```
-```
+```python
 count = 0
 for feature in layer.getFeatures():
     while count < 5:
@@ -97,7 +97,7 @@ for feature in layer.getFeatures():
 ```        
 ## Adiciona um novo campo de double chamado "x" à camada
 ## update 
-```
+```python
 layer.startEditing()
 layer.addAttribute(QgsField('x', QVariant.Double))
 layer.commitChanges()
@@ -122,7 +122,7 @@ layer.startEditing()
 <hr>
 
 ## Adiciona um novo campo de double chamado "y" à camada
-```
+```python
 layer.addAttribute(QgsField('y', QVariant.Double))
 
 ## Confirma as alterações realizadas na camada
@@ -151,7 +151,7 @@ layer.commitChanges()
 ```
 
 ## seleçao por expressao
-```
+```python
 layer.selectByExpression("TipoAero = 'Nacional'", QgsVectorLayer.SetSelection)
 
 ## Inverso de seleçao
@@ -159,17 +159,17 @@ layer.invertSelection()
 ```
 
 ## Adiçao a seleçao
-```
+```python
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.AddToSelection)
 ```
 
 ## remove da seleçao
-```
+```python
 layer.selectByExpression("nome ilike 'N%'", QgsVectorLayer.RemoveFromSelection)
 ```
 
 ## Criar um objeto com a seleçao
-```
+```python
 selection = layer.selectedFeatures()
 for feature in selection:
     print(feature.attributes())
@@ -179,7 +179,7 @@ for feature in selection:
 ## Automatizando tarefas
 ![Captura de tela de 2024-01-17 07-39-18](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/183adb4c-f72b-4db3-84bc-05f50e9db625)
 
-```
+```python
 # Define a variável `path` como o caminho para o diretório que contém as camadas vetoriais shapefile.
 path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
 
@@ -211,7 +211,7 @@ for root, diretory, files in os.walk(path):
 <hr>
 
 ## Define o título do projeto para "CURSO PYQGIS".
-```
+```python
 project.setTitle('CURSO PYQGIS')
 
 ## Imprime o título do projeto
