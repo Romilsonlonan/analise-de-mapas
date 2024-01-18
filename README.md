@@ -310,6 +310,10 @@ No exemplo acima, o método setSubsetString() é usado para aplicar o filtro de 
 
 ## Exportando um arquivo vetorial:
 
+![Captura de tela de 2024-01-18 19-12-25](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/4c1fd2e2-96a4-45b9-8052-12fdef0ab303)
+![Captura de tela de 2024-01-18 19-13-10](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/22520377-f6cc-438e-b30d-be27cc65a6f9)
+![Captura de tela de 2024-01-18 19-14-01](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/5dcd8c09-09f0-413a-9a26-f3fd9bcb3239)
+
 ```python
 # Cria um objeto de opções de gravação para especificar configurações adicionais durante a exportação da camada vetorial.
 options = QgsVectorFileWriter.SaveVectorOptions()
