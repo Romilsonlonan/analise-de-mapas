@@ -245,3 +245,42 @@ print(project.title())
 ## Aqui está um resumo mais conciso do que o código faz:
 
 * Carrega todas as camadas vetoriais shapefile de um diretório e define o título do projeto.
+* 
+
+# FILTRO EM CAMADA
+
+![Captura de tela de 2024-01-18 17-13-58](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/f9a31883-c4b4-4e9c-8f6b-1ce16a547f5b)
+
+```python
+path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
+
+for root, diretory, files in os.walk(path):
+    for file in files:
+        if file.endswith('.shp'):
+            path_vector = os.path.join(path,file)
+            layer = QgsVectorLayer(path_vector, file[0:-4],"ogr")
+            QgsProject.instance().addMapLayer(layer)
+            
+municipios = QgsProject.instance().mapLayersByName("municipios")[0]
+print(municipios.featureCount())
+
+municipios.setSubsetString("uf = 'RJ'")
+print(municipios.featureCount())
+
+municipios.setSubsetString("")
+```
+
+
+## Resumo geral:
+
+O código acima carrega todas as camadas vetoriais do formato .shp na pasta dados no projeto QGIS. Em seguida, o código imprime o número de features na camada municipios. Por fim, o código aplica um filtro à camada municipios para selecionar apenas as features cujo atributo uf tem o valor RJ. O código imprime o número de features na camada municipios após a aplicação do filtro.
+
+## Sobre o filtro em camada:
+
+O filtro em camada é uma operação que permite selecionar apenas um subconjunto de features de uma camada vetorial. O filtro pode ser aplicado com base em qualquer atributo da camada.
+
+No código acima, o filtro é aplicado com base no atributo uf da camada municipios. O valor do filtro é RJ. Isso significa que o filtro selecionará apenas as features cujas uf têm o valor RJ.
+
+O filtro pode ser aplicado de forma permanente ou temporária. No código acima, o filtro é aplicado de forma temporária. Isso significa que o filtro é aplicado apenas quando o código é executado. Se você quiser aplicar o filtro de forma permanente, você pode usar o método setSubsetString() da camada vetorial.
+
+No exemplo acima, o método setSubsetString() é usado para aplicar o filtro de forma permanente. A linha municipios.setSubsetString("uf = 'RJ'") aplica o filtro à camada municipios. A linha municipios.setSubsetString("") remove o filtro da camada municipios.
