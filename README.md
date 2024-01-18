@@ -1,4 +1,4 @@
-# analise-de-mapas
+# GEOPROCESSAMENTO DE IMAGENS 
 
 ![Captura de tela de 2024-01-17 07-03-52](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/ccf2b72b-e52e-4f29-92c6-d1c86910b983)
 ![Captura de tela de 2024-01-17 06-56-03](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/506aba90-6690-4fb9-8c35-3ebc1d3afb01)
@@ -292,11 +292,11 @@ municipios.setSubsetString("")
 ```
 
 
-## Resumo geral:
+## Resumo:
 
 O código acima carrega todas as camadas vetoriais do formato .shp na pasta dados no projeto QGIS. Em seguida, o código imprime o número de features na camada municipios. Por fim, o código aplica um filtro à camada municipios para selecionar apenas as features cujo atributo uf tem o valor RJ. O código imprime o número de features na camada municipios após a aplicação do filtro.
 
-## Sobre o filtro em camada:
+### Sobre o filtro em camada:
 
 O filtro em camada é uma operação que permite selecionar apenas um subconjunto de features de uma camada vetorial. O filtro pode ser aplicado com base em qualquer atributo da camada.
 
