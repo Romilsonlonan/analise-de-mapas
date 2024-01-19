@@ -341,3 +341,87 @@ As opções de gravação podem ser usadas para especificar configurações como
 O contexto de transformação contém informações sobre o sistema de coordenadas do projeto QGIS e do arquivo de saída. É importante utilizar o contexto de transformação correto para garantir que os dados sejam exportados corretamente.
 
 O formato GeoPackage é um formato de arquivo de dados espaciais aberto e flexível que pode ser utilizado para armazenar dados vetoriais e raster.
+
+<hr>
+
+## RAMPA DE CORES RASTER
+
+O propósito da rampa raster é associar um valor de cor a cada valor do raster. Isso permite que os valores do raster sejam representados de forma mais visual e intuitiva.
+
+No código fornecido, a rampa raster é usada para representar os valores do raster de elevação. Os valores mais baixos do raster são representados pela cor vermelha, os valores mais altos pela cor azul. Isso permite que o usuário visualize a distribuição da elevação no terreno.
+
+As rampas raster podem ser usadas para representar uma variedade de dados raster, incluindo dados de elevação, dados de temperatura, dados de vegetação e muito mais.
+
+Aqui estão alguns exemplos específicos de como as rampas raster podem ser usadas:
+
+Representar dados de elevação: Uma rampa raster pode ser usada para representar os valores de elevação de um terreno. Isso pode ser útil para visualizar a topografia do terreno, identificar áreas com elevações semelhantes e analisar as mudanças na elevação ao longo do tempo.
+Representar dados de temperatura: Uma rampa raster pode ser usada para representar os valores de temperatura de um local. Isso pode ser útil para visualizar as áreas com temperaturas mais altas ou mais baixas, identificar padrões de temperatura ao longo do tempo e analisar as mudanças climáticas.
+Representar dados de vegetação: Uma rampa raster pode ser usada para representar os tipos de vegetação de uma área. Isso pode ser útil para identificar áreas com diferentes tipos de vegetação, visualizar as mudanças na vegetação ao longo do tempo e analisar o impacto da atividade humana na vegetação.
+As rampas raster são uma ferramenta poderosa que pode ser usada para melhorar a visualização de dados raster.
+
+![Captura de tela de 2024-01-18 23-34-53](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/40414fe0-7d48-4476-9b98-51c4983d6348)
+```python
+#### RAMPA DE CORES RASTER ####
+
+# Carrega o raster
+raster = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados/merge.tif'
+rlayer = QgsRasterLayer(raster,"dem")
+
+# Cria o objeto de rampa de cores
+fcn = QgsColorRampShader()
+fcn.setColorRampType(QgsColorRampShader.Interpolated)
+
+# Define os pontos da rampa de cores
+lst = [
+QgsColorRampShader.ColorRampItem(0, QColor(255, 0, 0)),
+QgsColorRampShader.ColorRampItem(300, QColor(255, 153, 0)),
+QgsColorRampShader.ColorRampItem(900, QColor(255, 255, 102)),
+QgsColorRampShader.ColorRampItem(1100, QColor(153, 255, 0)),
+QgsColorRampShader.ColorRampItem(1600, QColor(0, 51, 0))
+]
+
+# Define a lista de pontos da rampa de cores para o objeto de rampa de cores
+fcn.setColorRampItemList(lst)
+
+# Cria o objeto de sombreador
+shader = QgsRasterShader()
+shader.setRasterShaderFunction(fcn)
+
+# Cria o objeto de renderização
+renderer = QgsSingleBandPseudoColorRenderer(rlayer.dataProvider(),1,shader)
+
+# Define o objeto de renderização para a camada raster
+rlayer.setRenderer(renderer)
+
+# Força a camada raster a ser redesenhada
+rlayer.tringgerRepaint()
+
+# Adiciona a camada raster ao projeto
+QgsProject.instance().addMapLayer(rlayer)
+
+```
+
+## Resumo
+
+Este código aplica uma rampa de cores a uma camada raster. A rampa de cores é definida por uma lista de pontos, cada um dos quais representa um valor do raster e uma cor correspondente.
+
+### O código segue os seguintes passos:
+
+Carrega a camada raster.
+Cria o objeto de rampa de cores.
+Define os pontos da rampa de cores.
+Define a lista de pontos da rampa de cores para o objeto de rampa de cores.
+Cria o objeto de sombreador.
+Define o objeto de sombreador para a camada raster.
+Força a camada raster a ser redesenhada.
+Adiciona a camada raster ao projeto.
+A rampa de cores definida no código neste caso é a seguinte:
+
+Valor | Cor
+------- | --------
+0 | Vermelho
+300 | Laranja
+900 | Amarelo
+1100 | Verde
+1600 | Azul
+Assim, os valores do raster entre 0 e 300 serão representados pela cor vermelha, os valores entre 300 e 900 pela cor laranja, e assim por diante.
