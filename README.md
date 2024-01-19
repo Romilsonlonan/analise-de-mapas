@@ -391,7 +391,7 @@ QgsVectorFileWriter.writeAsVectorFormatV2(municipios,
 ```
 
 ## Resumo
-Este código exporta uma camada vetorial para um arquivo GeoPackage. As linhas de código estão comentadas com uma descrição do que cada linha está fazendo.
+Este código exporta uma camada vetorial para um arquivo GeoPackage.
 
 ### Observações
 
