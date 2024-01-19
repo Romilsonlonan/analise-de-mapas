@@ -7,8 +7,11 @@ Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados par
 O geoprocessamento de imagens é uma ferramenta poderosa que pode ser usada para diversas aplicações, incluindo:
 
 * <b>Monitoramento ambiental:</b> O geoprocessamento de imagens pode ser usado para monitorar o meio ambiente, como a qualidade da água, a cobertura vegetal ou a ocorrência de desastres naturais.
+
 * <b>Planejamento urbano:</b> O geoprocessamento de imagens pode ser usado para planejar o desenvolvimento urbano, como a construção de rodovias, a expansão de bairros ou a identificação de áreas de risco.
+
 * <b>Gestão de recursos naturais:</b> O geoprocessamento de imagens pode ser usado para gerenciar recursos naturais, como a agricultura, a pesca ou a exploração mineral.
+
 * <b>Defesa:</b> O geoprocessamento de imagens pode ser usado para fins militares, como a vigilância de fronteiras ou a identificação de alvos.
 
 O geoprocessamento de imagens é uma área de pesquisa e desenvolvimento em constante evolução. As novas tecnologias estão permitindo que o geoprocessamento seja usado de novas maneiras e para aplicações mais complexas.
@@ -18,7 +21,8 @@ Algumas das principais tendências que estão impulsionando a evolução do geop
 O aumento da disponibilidade de dados de imagens: O avanço da tecnologia de sensoriamento remoto está levando ao aumento da disponibilidade de dados de imagens de alta qualidade. Esses dados estão tornando possível realizar análises mais complexas e obter insights mais profundos sobre o mundo ao nosso redor.
 O desenvolvimento de novas técnicas de processamento de imagens: As novas técnicas de processamento de imagens estão tornando possível identificar e extrair informações de dados de imagens de forma mais eficiente e precisa. Essas técnicas estão permitindo que o geoprocessamento seja usado para aplicações mais sofisticadas, como a identificação de mudanças ambientais ou a classificação de imagens de satélite.
 
-O surgimento de novas aplicações: O geoprocessamento de imagens está sendo usado para uma variedade de novas aplicações, incluindo a realidade aumentada, a inteligência artificial e a computação em nuvem. Essas aplicações estão expandindo o potencial do geoprocessamento para resolver problemas do mundo real.
+* <b>O surgimento de novas aplicações:</B> O geoprocessamento de imagens está sendo usado para uma variedade de novas aplicações, incluindo a realidade aumentada, a inteligência artificial e a computação em nuvem. Essas aplicações estão expandindo o potencial do geoprocessamento para resolver problemas do mundo real.
+
 O geoprocessamento de imagens é uma ferramenta poderosa que tem o potencial de impactar positivamente a sociedade e as empresas. À medida que as novas tecnologias continuam a evoluir, o geoprocessamento continuará a se tornar uma ferramenta ainda mais valiosa. Por isso, Hoje, vamos falar sobre como a linguagem de programação Python com QGIS está facilitando o trabalho de profissionais no campo do geoprocessamento de imagens.
 
 Como vimos, o geoprocessamento de imagens é uma ferramenta poderosa que pode ser usada para diversas aplicações. No entanto, o uso de ferramentas tradicionais de geoprocessamento, como o QGIS, pode ser limitante para aplicações mais complexas.
@@ -26,7 +30,9 @@ Como vimos, o geoprocessamento de imagens é uma ferramenta poderosa que pode se
 Aqui estão alguns dos desafios que os profissionais do geoprocessamento de imagens enfrentam ao usar ferramentas tradicionais:
 
 * <b>Complexidade:<b> As ferramentas tradicionais de geoprocessamento podem ser complexas de aprender e usar. Isso pode dificultar a implementação de novas técnicas e metodologias.
+
 * <b>Limitação de recursos:<b> As ferramentas tradicionais de geoprocessamento geralmente são limitadas em termos de recursos, como memória e processamento. Isso pode dificultar a execução de análises complexas.
+
 * <b>Repetição de tarefas:<b> As ferramentas tradicionais de geoprocessamento geralmente exigem que os usuários repitam tarefas manuais, como a criação de scripts e a depuração de código. Isso pode ser demorado e propenso a erros.
 Python com QGIS
 
@@ -37,9 +43,10 @@ QGIS é um software de Sistema de Informação Geográfica (SIG) de código aber
 A combinação de Python com QGIS oferece uma série de benefícios para profissionais do geoprocessamento de imagens, incluindo:
 
 * <b>Aumento da produtividade:</b> Python pode ser usado para automatizar tarefas repetitivas, o que pode liberar tempo para os profissionais se concentrarem em atividades mais estratégicas.
+  
 * <b>Maior flexibilidade:</b> Python é uma linguagem flexível que pode ser usada para implementar uma variedade de técnicas e metodologias.
+
 * <b>Redução de erros:</b> Python pode ser usado para criar scripts que são mais fáceis de depurar e manter do que scripts escritos em outras linguagens.
-Objetivos do treinamento
 
 
 
