@@ -1,4 +1,4 @@
-<h1 align="center" style=`color: #RRGGBB;`>
+<h1 align="center" style=`color: yellow;`>
   <b><span>GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span></b>
 </h1>
 
