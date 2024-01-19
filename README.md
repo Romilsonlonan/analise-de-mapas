@@ -1,12 +1,6 @@
-<h1 align="center" style=`color: #FFFF00;`>
-  <b><span>GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span></b>
+<h1 align="center" style="color: #FFFF00;">
+  <b>{c:red}GEOPROCESSAMENTO DE IMAGENS COM PYQGIS{/c}</b>
 </h1>
-
-```css
-.style {
-  color: #FFFF00;
-}
-```
 
 <div align="center">
   <img src="https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89" alt="PyQGIS">
