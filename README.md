@@ -491,7 +491,7 @@ Assim, os valores do raster entre 0 e 300 serão representados pela cor vermelha
 
 ## MAPA EM 3D
 
-[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7019747158891335680/)
+![Vídeo LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7019747158891335680/)
 
 
 
