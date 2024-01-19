@@ -1,4 +1,4 @@
-<h1 align="center">
+<h1 align="center"  style="height: 100px;">
   <span style="color: #FFFF00;">GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span>
   <br>
     <img src="https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89" alt="PyQGIS">
