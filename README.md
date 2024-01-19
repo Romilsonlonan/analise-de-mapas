@@ -1,4 +1,6 @@
-<span style="color: #FFFF00;"># GEOPROCESSAMENTO DE IMAGENS</span> 
+<span style="color: #FFFF00;"># GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span>
+
+![PyQGIS](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/b664d958-6678-4a24-8f2f-a5f920b27ac7)
 
 Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados para capturar, armazenar, processar, analisar e visualizar dados espaciais. As imagens são um tipo de dado espacial que pode ser usado para representar uma variedade de características, como a topografia de um terreno, a distribuição de vegetação ou a densidade de população.
 
@@ -23,9 +25,9 @@ Como vimos, o geoprocessamento de imagens é uma ferramenta poderosa que pode se
 
 Aqui estão alguns dos desafios que os profissionais do geoprocessamento de imagens enfrentam ao usar ferramentas tradicionais:
 
-Complexidade: As ferramentas tradicionais de geoprocessamento podem ser complexas de aprender e usar. Isso pode dificultar a implementação de novas técnicas e metodologias.
-Limitação de recursos: As ferramentas tradicionais de geoprocessamento geralmente são limitadas em termos de recursos, como memória e processamento. Isso pode dificultar a execução de análises complexas.
-Repetição de tarefas: As ferramentas tradicionais de geoprocessamento geralmente exigem que os usuários repitam tarefas manuais, como a criação de scripts e a depuração de código. Isso pode ser demorado e propenso a erros.
+* <b>Complexidade:<b> As ferramentas tradicionais de geoprocessamento podem ser complexas de aprender e usar. Isso pode dificultar a implementação de novas técnicas e metodologias.
+* <b>Limitação de recursos:<b> As ferramentas tradicionais de geoprocessamento geralmente são limitadas em termos de recursos, como memória e processamento. Isso pode dificultar a execução de análises complexas.
+* <b>Repetição de tarefas:<b> As ferramentas tradicionais de geoprocessamento geralmente exigem que os usuários repitam tarefas manuais, como a criação de scripts e a depuração de código. Isso pode ser demorado e propenso a erros.
 Python com QGIS
 
 Python é uma linguagem de programação de propósito geral que é amplamente utilizada em uma variedade de áreas, incluindo ciência de dados, inteligência artificial e aprendizado de máquina. Python é uma linguagem poderosa e flexível que pode ser usada para automatizar tarefas, criar scripts e desenvolver aplicações personalizadas.
@@ -34,9 +36,9 @@ QGIS é um software de Sistema de Informação Geográfica (SIG) de código aber
 
 A combinação de Python com QGIS oferece uma série de benefícios para profissionais do geoprocessamento de imagens, incluindo:
 
-Aumento da produtividade: Python pode ser usado para automatizar tarefas repetitivas, o que pode liberar tempo para os profissionais se concentrarem em atividades mais estratégicas.
-Maior flexibilidade: Python é uma linguagem flexível que pode ser usada para implementar uma variedade de técnicas e metodologias.
-Redução de erros: Python pode ser usado para criar scripts que são mais fáceis de depurar e manter do que scripts escritos em outras linguagens.
+* <b>Aumento da produtividade:</b> Python pode ser usado para automatizar tarefas repetitivas, o que pode liberar tempo para os profissionais se concentrarem em atividades mais estratégicas.
+* <b>Maior flexibilidade:</b> Python é uma linguagem flexível que pode ser usada para implementar uma variedade de técnicas e metodologias.
+* <b>Redução de erros:</b> Python pode ser usado para criar scripts que são mais fáceis de depurar e manter do que scripts escritos em outras linguagens.
 Objetivos do treinamento
 
 
