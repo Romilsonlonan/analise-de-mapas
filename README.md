@@ -360,6 +360,9 @@ Representar dados de vegetação: Uma rampa raster pode ser usada para represent
 As rampas raster são uma ferramenta poderosa que pode ser usada para melhorar a visualização de dados raster.
 
 ![Captura de tela de 2024-01-18 23-34-53](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/40414fe0-7d48-4476-9b98-51c4983d6348)
+![Captura de tela de 2024-01-19 11-31-53](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/49012375-c4b5-4a6b-8e48-1bd2ed83f4cc)
+![Captura de tela de 2024-01-19 11-33-06](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/77e0614e-fd51-452d-a331-ba94959ecd14)
+
 ```python
 #### RAMPA DE CORES RASTER ####
 
