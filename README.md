@@ -1,5 +1,5 @@
 
-<h1 align="center" style="c:#B81365">
+<h1 align="center">
   <b >GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</b>
 </h1>
 
