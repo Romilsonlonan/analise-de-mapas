@@ -1,12 +1,8 @@
 <h1 align="center">
   <span style="color: #FFFF00;">GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span>
+  <br>
+    <img src="https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89" alt="PyQGIS">
 </h1>
-
-
-![PyQGIS](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89)
-<center>
-  <img src="https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89" alt="PyQGIS">
-</center>
 
 Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados para capturar, armazenar, processar, analisar e visualizar dados espaciais. As imagens são um tipo de dado espacial que pode ser usado para representar uma variedade de características, como a topografia de um terreno, a distribuição de vegetação ou a densidade de população.
 
