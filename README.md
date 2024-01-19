@@ -491,8 +491,7 @@ Assim, os valores do raster entre 0 e 300 serão representados pela cor vermelha
 
 ## MAPA EM 3D
 
-[![Mapa QGIS 3D](![PyQGIS](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/31c05242-4ac6-4c81-b211-ac939bdc48c2)
-)(https://youtu.be/Oza3phqhMtA)]
+[[Mapa QGIS 3D](https://youtu.be/Oza3phqhMtA)]
 
 
 
