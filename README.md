@@ -2,7 +2,6 @@
   <span style="color: #FFFF00;">GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</span>
 </h1>
 
-![PyQGIS](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/b664d958-6678-4a24-8f2f-a5f920b27ac7)
 
 ![PyQGIS](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89)
 
