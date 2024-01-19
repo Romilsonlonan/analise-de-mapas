@@ -486,3 +486,11 @@ Valor | Cor
 1100 | Verde
 1600 | Azul
 Assim, os valores do raster entre 0 e 300 serão representados pela cor vermelha, os valores entre 300 e 900 pela cor laranja, e assim por diante.
+
+<hr>
+
+## MAPA EM 3D
+
+https://www.linkedin.com/feed/update/urn:li:activity:7019747158891335680/
+
+
