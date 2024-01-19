@@ -1,12 +1,12 @@
-# GEOPROCESSAMENTO DE IMAGENS 
+<b><span style="color: yellow;"># GEOPROCESSAMENTO DE IMAGENS</b></span> 
 
 Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados para capturar, armazenar, processar, analisar e visualizar dados espaciais. As imagens são um tipo de dado espacial que pode ser usado para representar uma variedade de características, como a topografia de um terreno, a distribuição de vegetação ou a densidade de população.
 
 O geoprocessamento de imagens é uma ferramenta poderosa que pode ser usada para diversas aplicações, incluindo:
 
-* Monitoramento ambiental: O geoprocessamento de imagens pode ser usado para monitorar o meio ambiente, como a qualidade da água, a cobertura vegetal ou a ocorrência de desastres naturais.
-* Planejamento urbano: O geoprocessamento de imagens pode ser usado para planejar o desenvolvimento urbano, como a construção de rodovias, a expansão de bairros ou a identificação de áreas de risco.
-* Gestão de recursos naturais: O geoprocessamento de imagens pode ser usado para gerenciar recursos naturais, como a agricultura, a pesca ou a exploração mineral.
+* <b>Monitoramento ambiental:</b> O geoprocessamento de imagens pode ser usado para monitorar o meio ambiente, como a qualidade da água, a cobertura vegetal ou a ocorrência de desastres naturais.
+* <b>Planejamento urbano:</b> O geoprocessamento de imagens pode ser usado para planejar o desenvolvimento urbano, como a construção de rodovias, a expansão de bairros ou a identificação de áreas de risco.
+* <b>Gestão de recursos naturais:</b> O geoprocessamento de imagens pode ser usado para gerenciar recursos naturais, como a agricultura, a pesca ou a exploração mineral.
 * <b>Defesa:</b> O geoprocessamento de imagens pode ser usado para fins militares, como a vigilância de fronteiras ou a identificação de alvos.
 
 O geoprocessamento de imagens é uma área de pesquisa e desenvolvimento em constante evolução. As novas tecnologias estão permitindo que o geoprocessamento seja usado de novas maneiras e para aplicações mais complexas.
