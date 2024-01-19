@@ -12,7 +12,7 @@ Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados par
 
 O geoprocessamento de imagens é uma ferramenta poderosa que pode ser usada para diversas aplicações, incluindo:
 
-* ###<b><kbd>Monitoramento ambiental:</b><kbd> O geoprocessamento de imagens pode ser usado para monitorar o meio ambiente, como a qualidade da água, a cobertura vegetal ou a ocorrência de desastres naturais.
+* ###<b><kb>Monitoramento ambiental:</b><kb> O geoprocessamento de imagens pode ser usado para monitorar o meio ambiente, como a qualidade da água, a cobertura vegetal ou a ocorrência de desastres naturais.
 
 * <b>Planejamento urbano:</b> O geoprocessamento de imagens pode ser usado para planejar o desenvolvimento urbano, como a construção de rodovias, a expansão de bairros ou a identificação de áreas de risco.
 
