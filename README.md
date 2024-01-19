@@ -1,6 +1,6 @@
 
-<h1 align="center">
-  <b>GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</b>
+<h1 align="center"{c:#B81365}>
+  <b >GEOPROCESSAMENTO DE IMAGENS COM PYQGIS</b>
 </h1>
 
 <div align="center">
