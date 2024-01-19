@@ -35,11 +35,11 @@ Como vimos, o geoprocessamento de imagens é uma ferramenta poderosa que pode se
 
 Aqui estão alguns dos desafios que os profissionais do geoprocessamento de imagens enfrentam ao usar ferramentas tradicionais:
 
-* **Complexidade:** As ferramentas tradicionais de geoprocessamento podem ser complexas de aprender e usar. Isso pode dificultar a implementação de novas técnicas e metodologias.
+* **Complexidade:**  As ferramentas tradicionais de geoprocessamento podem ser complexas de aprender e usar. Isso pode dificultar a implementação de novas técnicas e metodologias.
 
-* **Limitação de recursos:** As ferramentas tradicionais de geoprocessamento geralmente são limitadas em termos de recursos, como memória e processamento. Isso pode dificultar a execução de análises complexas.
+* **Limitação de recursos:**  As ferramentas tradicionais de geoprocessamento geralmente são limitadas em termos de recursos, como memória e processamento. Isso pode dificultar a execução de análises complexas.
 
-* **Repetição de tarefas:** As ferramentas tradicionais de geoprocessamento geralmente exigem que os usuários repitam tarefas manuais, como a criação de scripts e a depuração de código. Isso pode ser demorado e propenso a erros.
+* **Repetição de tarefas:**  As ferramentas tradicionais de geoprocessamento geralmente exigem que os usuários repitam tarefas manuais, como a criação de scripts e a depuração de código. Isso pode ser demorado e propenso a erros.
 Python com QGIS
 
 Python é uma linguagem de programação de propósito geral que é amplamente utilizada em uma variedade de áreas, incluindo ciência de dados, inteligência artificial e aprendizado de máquina. Python é uma linguagem poderosa e flexível que pode ser usada para automatizar tarefas, criar scripts e desenvolver aplicações personalizadas.
@@ -48,11 +48,11 @@ QGIS é um software de Sistema de Informação Geográfica (SIG) de código aber
 
 A combinação de Python com QGIS oferece uma série de benefícios para profissionais do geoprocessamento de imagens, incluindo:
 
-* **Aumento da produtividade:** Python pode ser usado para automatizar tarefas repetitivas, o que pode liberar tempo para os profissionais se concentrarem em atividades mais estratégicas.
+* **Aumento da produtividade:**  Python pode ser usado para automatizar tarefas repetitivas, o que pode liberar tempo para os profissionais se concentrarem em atividades mais estratégicas.
   
-* **Maior flexibilidade:** Python é uma linguagem flexível que pode ser usada para implementar uma variedade de técnicas e metodologias.
+* **Maior flexibilidade:**  Python é uma linguagem flexível que pode ser usada para implementar uma variedade de técnicas e metodologias.
 
-* **Redução de erros:** Python pode ser usado para criar scripts que são mais fáceis de depurar e manter do que scripts escritos em outras linguagens.
+* **Redução de erros:**  Python pode ser usado para criar scripts que são mais fáceis de depurar e manter do que scripts escritos em outras linguagens.
 
 
 
