@@ -5,7 +5,8 @@
 <div align="center">
   <img src="https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/6944fdb3-c7e0-4b32-ba57-0e1f8416fb89" alt="PyQGIS">
 </div>
-
+<br>
+<br>
 Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados para capturar, armazenar, processar, analisar e visualizar dados espaciais. As imagens são um tipo de dado espacial que pode ser usado para representar uma variedade de características, como a topografia de um terreno, a distribuição de vegetação ou a densidade de população.
 
 O geoprocessamento de imagens é uma ferramenta poderosa que pode ser usada para diversas aplicações, incluindo:
