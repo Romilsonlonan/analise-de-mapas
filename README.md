@@ -1,4 +1,4 @@
-<b><span style="color: yellow;"># GEOPROCESSAMENTO DE IMAGENS</b></span> 
+<span style="color: yellow;"># GEOPROCESSAMENTO DE IMAGENS</span> 
 
 Geoprocessamento de imagens é o conjunto de técnicas e métodos utilizados para capturar, armazenar, processar, analisar e visualizar dados espaciais. As imagens são um tipo de dado espacial que pode ser usado para representar uma variedade de características, como a topografia de um terreno, a distribuição de vegetação ou a densidade de população.
 
