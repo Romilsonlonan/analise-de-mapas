@@ -489,6 +489,105 @@ Assim, os valores do raster entre 0 e 300 serão representados pela cor vermelha
 
 <hr>
 
+## FUNÇÕES
+
+![Captura de tela de 2024-01-21 14-40-20](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/ac26386a-5699-40a0-a3af-6534a8035f9c)
+```python
+## Define a função `list_files()`
+def list_files(path, type):
+    ## Cria uma lista vazia para armazenar os nomes dos arquivos encontrados
+    lst = []
+
+    ## Percorre todos os diretórios e arquivos dentro do caminho especificado
+    for root, directory, files in os.walk(path):
+        ## Percorre cada arquivo encontrado
+        for file in files:
+            ## Verifica se a extensão do arquivo corresponde à extensão especificada
+            if file.endswith(type):
+                ## Adiciona o nome do arquivo à lista
+                lst.append(file)
+
+    ## Retorna a lista de nomes de arquivos encontrados
+    return lst
+
+
+def open_vector_layers(path, type):
+    ## Obtém a lista de arquivos com a extensão especificada dentro do caminho
+    files = list_files(path, type)
+
+    ## Cria um dicionário vazio para armazenar as camadas vetoriais carregadas
+    vectors = {}
+
+    ## Percorre cada arquivo encontrado
+    for file in files:
+        ## Extrai o nome do arquivo sem a extensão
+        filename = file.split('.')[0]
+
+        ## Tenta carregar o arquivo como uma camada vetorial no QGIS
+        vector = iface.addVectorLayer(os.path.join(path, file), filename, "ogr")
+
+        ## Se a camada foi carregada com sucesso, adiciona-a ao dicionário
+        if vector is not None:
+            vectors.update({filename: vector})
+
+    ## Retorna o dicionário contendo as camadas carregadas
+    return vectors
+
+
+## Define o caminho para o diretório contendo as camadas
+path = os.getcwd() + '/*** Projetos em Desenvolvimento ***/PYQGIS/dados'
+
+## Carrega as camadas vetoriais com extensão 'gpkg' do diretório especificado
+camadas = open_vector_layers(path, 'gpkg')
+
+## Imprime o dicionário contendo as camadas carregadas
+print(camadas)
+```
+
+### Explicação parte 1:
+
+* A função list_files() recebe dois argumentos: o caminho para o diretório a ser pesquisado e o tipo de arquivo a ser procurado.
+* A função começa criando uma lista vazia para armazenar os arquivos.
+* Em seguida, a função itera sobre os diretórios e arquivos no caminho especificado.
+* Para cada arquivo, a função verifica se o arquivo termina com o tipo especificado.
+* Se o arquivo terminar com o tipo especificado, a função adiciona o arquivo à lista.
+* Finalmente, a função retorna a lista de arquivos.
+
+### Importância da função para otimização de tarefas:
+
+A função list_files() pode ser usada para otimizar tarefas que envolvem a pesquisa de arquivos em um diretório. Por exemplo, a função pode ser usada para:
+
+Localizar todos os arquivos de um determinado tipo em um diretório.
+Listar todos os arquivos em um diretório.
+Excluir todos os arquivos em um diretório.
+A função list_files() pode economizar tempo e esforço ao automatizar essas tarefas.
+
+Função open_vector_layers()
+
+### Explicação parte 2:
+
+* A função open_vector_layers() recebe dois argumentos: o caminho para o diretório a ser pesquisado e o tipo de arquivo a ser procurado.
+* A função começa chamando a função list_files() para obter a lista de arquivos no diretório especificado.
+* Em seguida, a função cria um dicionário para armazenar as camadas.
+* A função itera sobre a lista de arquivos.
+* Para cada arquivo, a função obtém o nome do arquivo sem a extensão.
+* Em seguida, a função abre o arquivo como uma camada vetorial.
+* Finalmente, a função adiciona a camada ao dicionário.
+* A função retorna o dicionário de camadas.
+
+### Importância da função para otimização de tarefas:
+
+A função open_vector_layers() pode ser usada para otimizar tarefas que envolvem a abertura de camadas vetoriais em um diretório. Por exemplo, a função pode ser usada para:
+
+* Abrir todas as camadas vetoriais de um determinado tipo em um diretório.
+* Listar todas as camadas vetoriais em um diretório.
+* Carregar todas as camadas vetoriais em um diretório em uma camada única.
+A função open_vector_layers() pode economizar tempo e esforço ao automatizar essas tarefas.
+
+Resumo:
+
+As funções list_files() e open_vector_layers() podem ser usadas para otimizar tarefas que envolvem a pesquisa e abertura de arquivos em um diretório. Essas funções podem economizar tempo e esforço ao automatizar essas tarefas.
+
 ## MAPA EM 3D
 
 [Mapa QGIS 3D](https://youtu.be/Oza3phqhMtA)
