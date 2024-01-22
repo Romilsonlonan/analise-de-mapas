@@ -705,8 +705,7 @@ def reproject(path, epsg):
 ### Pasta reproject criada
 
 ![Captura de tela de 2024-01-22 17-14-44](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/9a615502-24eb-4783-8400-52e725f4366c)
-<hr>
-![Captura de tela de 2024-01-22 17-20-34](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/c7f84f94-0b70-4b04-bf28-105b08ed9053)
+![Captura de tela de 2024-01-22 17-20-34](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/c8fab9f2-6bb1-4199-9aec-0791451a4b5a)
 
 ## CRIANDO FUNÇÃO DE FILTROS (continuando o processo de automação)
 
