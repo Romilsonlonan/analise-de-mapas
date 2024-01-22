@@ -592,5 +592,121 @@ As funções list_files() e open_vector_layers() podem ser usadas para otimizar 
 
 [Mapa QGIS 3D](https://youtu.be/Oza3phqhMtA)
 
+<hr>
+
+## AUTOMATIZANDO PROCESSOS
+
+![Captura de tela de 2024-01-22 17-09-54](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/8e957324-4c46-4108-af90-d26f02616fe6)
+
+```python
+# Importa os módulos necessários
+import os
+import processing
+from qgis.core import *
+from qgis.utils import iface
+from PyQt5.QtCore import QVariant
+
+# Define a função `list_files()`
+def list_files(path, type):
+    # Cria uma lista vazia para armazenar os nomes dos arquivos encontrados
+    lst = []
+
+    # Percorre todos os diretórios e arquivos dentro do caminho especificado
+    for root, directory, files in os.walk(path):
+        # Percorre cada arquivo encontrado
+        for file in files:
+            # Verifica se a extensão do arquivo corresponde à extensão especificada
+            if file.endswith(type):
+                # Adiciona o nome do arquivo à lista
+                lst.append(file)
+
+    # Retorna a lista de nomes de arquivos encontrados
+    return lst
+
+
+# Obtém a lista de arquivos com a extensão especificada dentro do caminho
+def open_vector_layers(path, type):
+    # Obtém a lista de arquivos com a extensão especificada
+    files = list_files(path, type)
+
+    # Cria um dicionário vazio para armazenar as camadas vetoriais carregadas
+    vectors = {}
+
+    # Percorre cada arquivo encontrado
+    for file in files:
+        # Extrai o nome do arquivo sem a extensão
+        filename = file.split('.')[0]
+
+        # Tenta carregar o arquivo como uma camada vetorial no QGIS
+        vector = iface.addVectorLayer(os.path.join(path, file), filename, "ogr")
+
+        # Se a camada foi carregada com sucesso, adiciona-a ao dicionário
+        if vector is not None:
+            vectors.update({filename: vector})
+
+    # Retorna o dicionário contendo as camadas carregadas
+    return vectors
+
+
+# Adiciona um novo atributo a uma camada vetorial
+def new_attribute(layer, field_name, type):
+    # Verifica o tipo de campo
+    if type == 1:
+        field_type = QVariant.String
+    elif type == 2:
+        field_type = QVariant.Int
+    else:
+        field_type = QVariant.Double
+
+    # Inicia o modo de edição da camada
+    layer.startEditing()
+
+    # Adiciona o novo campo à camada
+    layer.addAttribute(QgsField(field_name, field_type))
+
+    # Confirma as alterações na camada
+    layer.commitChanges()
+
+    return
+
+
+# Cria uma nova pasta
+def create_folder(path):
+    # Verifica se a pasta existe
+    if not os.path.exists(path + 'reproject'):
+        # Cria a pasta
+        os.makedirs(path + 'reproject')
+
+
+# Reprojeta uma camada vetorial para uma nova CRS
+def reproject(path, epsg):
+    # Cria a nova pasta
+    create_folder(path)
+
+    # Percorre todos os arquivos shape
+    for shape in list_files(path, '.shp'):
+        # Obtém o caminho completo do arquivo
+        input_path = path + shape
+
+        # Obtém o caminho do arquivo reprojetado
+        out_path = path + '/reproject/' + str(epsg) + '_' + shape
+
+        # Reprojeta a camada
+        processing.run("native:reprojectlayer", {
+            'INPUT': input_path,
+            'TARGET_CRS': QgsCoordinateReferenceSystem(f'EPSG:{epsg}'),
+            'OUTPUT': out_path
+        })
+
+    return
+
+```
+
+### Pasta criada
+
+![Captura de tela de 2024-01-22 17-14-44](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/9a615502-24eb-4783-8400-52e725f4366c)
+
+## CRIANDO FUNÇÃO DE FILTROS (continuando o processo de automação)
+
 
 
