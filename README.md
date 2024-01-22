@@ -708,6 +708,8 @@ def reproject(path, epsg):
 ![Captura de tela de 2024-01-22 17-20-34](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/c8fab9f2-6bb1-4199-9aec-0791451a4b5a)
 
 ## CRIANDO FUNÇÃO DE FILTROS (continuando o processo de automação)
+```python
 
+```
 
 
