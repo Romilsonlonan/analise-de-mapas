@@ -708,7 +708,53 @@ def reproject(path, epsg):
 ![Captura de tela de 2024-01-22 17-20-34](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/c8fab9f2-6bb1-4199-9aec-0791451a4b5a)
 
 ## CRIANDO FUNÇÃO DE FILTROS (continuando o processo de automação)
+
+![Captura de tela de 2024-01-24 16-02-19](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/cc73cec9-1b20-4d43-a6a4-e68dbb6904d3)
+
 ```python
+##### ADICIONANDO COR EM CAMADAS  #####
+
+# Importa as bibliotecas necessárias.
+import sys
+sys.path.insert(0, os.path.join(os.getcwd(), '*** Projetos em Desenvolvimento ***/PYQGIS/tutoriais/'))
+from script_funcoes import list_files, open_vector_layers, new_attribute, reproject
+
+# Carrega as camadas de vetores do diretório especificado.
+path = '/home/romilson/*** Projetos em Desenvolvimento ***/PYQGIS/dados/'
+camadas = open_vector_layers(path+'reproject/','.shp')
+
+#### APLICANDO CAMADAS DE COR VERMELHO RGB ###
+
+# Aplica um filtro à camada '31981_aeroportos' para selecionar apenas os aeroportos do Paraná.
+camadas['31981_aeroportos'].setSubsetString("uf = 'PR'")
+
+# Seleciona a camada ativa no QGIS.
+layer = iface.activeLayer()
+
+# Obtém o renderizador da camada ativa.
+renderer = layer.renderer()
+
+# Obtém o símbolo único do renderizador.
+symbol = renderer.symbol()
+
+# Define a cor do símbolo para vermelho.
+symbol.setColor(QColor(255, 0, 0))
+
+
+#### ADICIONANDO UMA FUNÇAO PARA FILTROS ####
+
+# Declara a função 'apply_filter()'.
+def apply_filter(layer,field,param):
+  # Define o valor global da função 'apply_filter()'.
+  global apply_filter
+  # Aplica a função 'apply_filter()' à camada especificada.
+  return layer.setSubsetString(f"{field} = '{param}'")
+
+# Aplica a função 'apply_filter()' à camada '31981_aeroportos' para selecionar apenas os aeroportos do Rio de Janeiro.
+apply_filter(camadas['31981_aeroportos'],'UF', 'RJ')
+
+# Aplica a função 'apply_filter()' à camada '31981_aeroportos' para selecionar apenas os aeroportos de Mato Grosso.
+apply_filter(camadas['31981_aeroportos'],'uf', 'MT')
 
 ```
 
