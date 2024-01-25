@@ -757,5 +757,74 @@ apply_filter(camadas['31981_aeroportos'],'UF', 'RJ')
 apply_filter(camadas['31981_aeroportos'],'uf', 'MT')
 
 ```
+<hr>
 
+## ANÁLISE BUFFER
 
+![Captura de tela de 2024-01-25 10-43-19](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/81d257ee-7fc0-46e3-9b7f-97c8fd1af177)
+
+![Captura de tela de 2024-01-25 10-42-21](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/1a865967-ada6-4163-8d0e-e2bd8d438b71)
+
+```python
+##### FUNÇOES BUFFER #####
+
+# Importa o módulo sys do Python
+import sys
+
+# Insere o caminho do diretório '*** Projetos em Desenvolvimento ***/PYQGIS/tutoriais/' no início do caminho do módulo
+sys.path.insert(0, os.path.join(os.getcwd(), '*** Projetos em Desenvolvimento ***/PYQGIS/tutoriais/'))
+
+# Importa as funções list_files, open_vector_layers, new_attribute, reproject, e alerta_aero do módulo script_funcoes
+from script_funcoes import list_files, open_vector_layers, new_attribute, reproject, alerta_aero
+
+# Define a variável path como o caminho para o diretório de dados
+path = '/home/romilson/*** Projetos em Desenvolvimento ***/PYQGIS/dados/'
+
+# Abre as camadas vetoriais no diretório path+'reproject/' com a extensão .shp
+# A função open_vector_layers() retorna um dicionário com as camadas abertas
+camadas = open_vector_layers(path+'reproject/','.shp')
+
+# Aplica um filtro à camada 31981_aeroportos para selecionar apenas as linhas com o campo uf igual a PR
+camadas['31981_aeroportos'].setSubsetString("uf = 'PR'")
+
+# Define a função apply_filter()
+def apply_filter(layer,field,param):
+    global apply_filter
+    return layer.setSubsetString(f"{field} = '{param}'")
+
+# Define a função alerta_aero()
+def alerta_aero(layer, param, path, field, state):
+    apply_filter(layer,field,state)
+    if param == 'seco':
+        buffer = 200
+    elif param == 'chuva':
+        buffer = 1000
+    else:
+        buffer = 3000
+    processing.run("native:buffer",
+                  {'INPUT':layer,
+                   'DISTANCE':buffer,
+                   'SEGMENTS':5,
+                   'END_CAP_STYLE':0,
+                   'JOIN_STYLE':0,
+                   'MITER_LIMIT':2,
+                   'DISSOLVE':True,
+                   'OUTPUT':path+'buffer.shp'})
+    iface.addVectorLayer(path+'buffer.shp', "analise", "ogr")
+    return
+
+# Chama a função alerta_aero() com os seguintes parâmetros:
+#   * layer: A camada 31981_aeroportos
+#   * param: O valor do campo UF para o filtro
+#   * path: O caminho para o diretório de saída
+#   * field: O nome do campo para o filtro
+#   * state: O valor do campo UF para o filtro
+alerta_aero(camadas['31981_aeroportos'],
+            'chuva',
+            path+'reproject/',
+            'UF',
+            'PR')
+```
+
+### Arquivos buffer criado
+![Captura de tela de 2024-01-24 19-45-41](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/29406550-6161-4273-9202-de8d4124d3f4)
