@@ -828,3 +828,79 @@ alerta_aero(camadas['31981_aeroportos'],
 
 ### Arquivos buffer criado
 ![Captura de tela de 2024-01-24 19-45-41](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/29406550-6161-4273-9202-de8d4124d3f4)
+
+<hr>
+
+## EXPORTANDO ARQUIVO MUNICIPIOS POR ESTADO
+
+![Captura de tela de 2024-01-25 14-18-54](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/4ba2631d-067c-4752-9cc6-50b3e8dc8d12)
+
+
+```python
+import sys
+
+# **Insere o caminho do diretório '*** Projetos em Desenvolvimento ***/PYQGIS/tutoriais/' no início do caminho do módulo**
+sys.path.insert(0, os.path.join(os.getcwd(), '*** Projetos em Desenvolvimento ***/PYQGIS/tutoriais/'))
+
+# **Importa as funções list_files, open_vector_layers, new_attribute, reproject, e alerta_aero do módulo script_funcoes**
+from script_funcoes import list_files, open_vector_layers, new_attribute, reproject, alerta_aero
+
+
+# **Cria uma pasta se ela não existir**
+def create_folder(path):
+    if not os.path.exists(path):
+        os.makedirs(path)
+        print(f"Criada a pasta '{path}'")
+
+
+# **Aplica um filtro a uma camada vetorial**
+def apply_filter(layer, field, param):
+    return layer.setSubsetString(f"{field} = '{param}'")
+
+
+# **Escreve uma camada vetorial em formato GeoPackage**
+def to_geopackage(layer, filename, out_path):
+    options = QgsVectorFileWriter.SaveVectorOptions()
+    transform_context = QgsProject.instance().transformContext()
+    QgsVectorFileWriter.writeAsVectorFormatV2(layer, out_path, transform_context, options)
+    print(f"Arquivo '{filename}' criado com sucesso!")
+
+
+# **Variável que armazena o caminho para a pasta de saída**
+path = '/home/romilson/*** Projetos em Desenvolvimento ***/PYQGIS/dados/reproject/'
+
+
+# **Abre as camadas vetoriais no diretório especificado**
+camadas = open_vector_layers(path, '.shp')
+
+
+# **Percorre as camadas e cria um arquivo GeoPackage para cada UF**
+for i in camadas['31981_municipios'].uniqueValues(4):
+    output_path = path + 'result/' + i
+
+    # **Verifica se a pasta já existe**
+    if os.path.exists(output_path):
+        print(f"A pasta '{output_path}' já existe!")
+
+    # **Cria a pasta e executa as outras etapas**
+    elif not os.path.exists(output_path):
+        create_folder(output_path)
+        apply_filter(camadas['31981_municipios'], 'uf', i)
+        filename = i
+        out_path = output_path + '/' + i
+        to_geopackage(camadas['31981_municipios'], filename, out_path)
+        camadas['31981_municipios'].setSubsetString("")
+        print(f"Pasta e arquivos criados com sucesso para a UF '{i}'!")
+
+    # **Imprime uma mensagem de erro se a pasta não for criada**
+    else:
+        print(f"Erro ao criar a pasta '{output_path}'!")
+
+```
+### Pasta e arquivos criados
+
+![Captura de tela de 2024-01-25 14-20-15](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/fc00521c-e10c-44fe-89a0-ceca592b3397)
+
+![Captura de tela de 2024-01-25 14-20-58](https://github.com/Romilsonlonan/analise-de-mapas/assets/90980220/e8e9631e-4c06-4ad3-822a-7f1911a13d0a)
+
+<hr> 
